@@ -1,24 +1,20 @@
-# @mcpdotdirect/create-mcp-server
+# @mcpdotdirect/template-mcp-server
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6)
 ![MCP](https://img.shields.io/badge/MCP-1.7+-green)
 
-A CLI tool to create a new Model Context Protocol (MCP) server project. This package provides a template for building custom MCP servers that can be used by AI agents to interact with external systems and data sources.
+A CLI tool to quickly get started building your very own MCP (Model Context Protocol) server. 
 
 ## 📋 Usage
 
-You can create a new MCP server project using npx:
-
 ```bash
-# Create a new MCP server in the current directory
+# with npx
 npx @mcpdotdirect/create-mcp-server
 
 # Or with npm
 npm init @mcpdotdirect/create-mcp-server
 ```
-
-This will create a new MCP server project in the current directory with all the necessary files. You'll need to install the dependencies manually after creation.
 
 ## 🔭 What's Included
 
