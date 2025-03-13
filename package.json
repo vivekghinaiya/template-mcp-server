@@ -1,14 +1,11 @@
 {
-  "name": "@mcpdotdirect/create-mcp-server",
+  "name": "@mcpdotdirect/template-mcp-server",
   "module": "src/index.ts",
   "type": "module",
   "version": "1.0.0",
   "description": "Model Context Protocol (MCP) Server Template Generator",
   "private": false,
   "main": "build/index.js",
-  "bin": {
-    "create-mcp-server": "build/index.js"
-  },
   "files": [
     "build",
     "LICENSE",
