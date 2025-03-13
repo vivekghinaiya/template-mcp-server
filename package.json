@@ -3,13 +3,20 @@
   "module": "src/index.ts",
   "type": "module",
   "version": "1.0.0",
-  "description": "Model Context Protocol (MCP) Server Template Generator",
+  "description": "CLI tool to create a new MCP (Model Context Protocol) server project",
   "private": false,
   "main": "build/index.js",
+  "bin": {
+    "create-mcp-server": "./bin/create-mcp-server.js"
+  },
   "files": [
-    "build",
-    "LICENSE",
-    "README.md"
+    "bin",
+    "src/",
+    "build/",
+    ".gitignore",
+    "tsconfig.json",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "start": "bun run src/index.ts",
@@ -30,10 +37,14 @@
   "keywords": [
     "mcp",
     "model-context-protocol",
-    "ai",
     "template",
-    "llm",
-    "generator"
+    "server",
+    "ai",
+    "agent",
+    "create",
+    "generator",
+    "starter",
+    "boilerplate"
   ],
   "author": "mcpdotdirect",
   "license": "MIT",
@@ -55,5 +66,8 @@
     "cors": "^2.8.5",
     "express": "^4.21.2",
     "zod": "^3.24.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
