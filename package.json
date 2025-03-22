@@ -1,5 +1,5 @@
 {
-  "name": "@mcpdotdirect/template-mcp-server",
+  "name": "@mcpdotdirect/create-mcp-server",
   "module": "src/index.ts",
   "type": "module",
   "version": "1.0.0",
@@ -21,11 +21,17 @@
   "scripts": {
     "start": "bun run src/index.ts",
     "build": "bun build src/index.ts --outdir build --target node",
-    "build:http": "bun build src/server/http-server.ts --outdir build --target node",
+    "build:http": "bun build src/server/http-server.ts --outdir build --target node --outfile http-server.js",
     "dev": "bun --watch src/index.ts",
     "start:http": "bun run src/server/http-server.ts",
     "dev:http": "bun --watch src/server/http-server.ts",
-    "prepublishOnly": "bun run build"
+    "prepublishOnly": "bun run build && bun run build:http",
+    "version:patch": "npm version patch",
+    "version:minor": "npm version minor",
+    "version:major": "npm version major",
+    "release": "npm publish",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "changelog:latest": "conventional-changelog -p angular -r 1 > RELEASE_NOTES.md"
   },
   "repository": {
     "type": "git",
@@ -56,7 +62,8 @@
     "@types/bun": "latest",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
-    "@types/node": "^20.17.24"
+    "@types/node": "^20.17.24",
+    "conventional-changelog-cli": "^5.0.0"
   },
   "peerDependencies": {
     "typescript": "^5.8.2"
