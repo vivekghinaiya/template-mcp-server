@@ -13,7 +13,7 @@ A CLI tool to quickly get started building your very own MCP (Model Context Prot
 npx @mcpdotdirect/create-mcp-server
 
 # Or with npm
-npm init @mcpdotdirect/create-mcp-server
+npm init @mcpdotdirect/mcp-server
 ```
 
 ## 🔭 What's Included
