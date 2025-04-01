@@ -1,4 +1,4 @@
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { FastMCP } from "fastmcp";
 import { registerResources } from "../core/resources.js";
 import { registerTools } from "../core/tools.js";
 import { registerPrompts } from "../core/prompts.js";
@@ -6,8 +6,8 @@ import { registerPrompts } from "../core/prompts.js";
 // Create and start the MCP server
 async function startServer() {
   try {
-    // Create a new MCP server instance
-    const server = new McpServer({
+    // Create a new FastMCP server instance
+    const server = new FastMCP({
       name: "MCP Server",
       version: "1.0.0"
     });

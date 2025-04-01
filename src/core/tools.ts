@@ -1,50 +1,36 @@
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { FastMCP } from "fastmcp";
 import { z } from "zod";
 import * as services from "./services/index.js";
 
 /**
  * Register all tools with the MCP server
  * 
- * @param server The MCP server instance
+ * @param server The FastMCP server instance
  */
-export function registerTools(server: McpServer) {
+export function registerTools(server: FastMCP) {
   // Greeting tool
-  server.tool(
-    "hello_world",
-    "A simple hello world tool",
-    {
+  server.addTool({
+    name: "hello_world",
+    description: "A simple hello world tool",
+    parameters: z.object({
       name: z.string().describe("Name to greet")
-    },
-    async (params: { name: string }) => {
+    }),
+    execute: async (params) => {
       const greeting = services.GreetingService.generateGreeting(params.name);
-      return {
-        content: [
-          {
-            type: "text",
-            text: greeting
-          }
-        ]
-      };
+      return greeting;
     }
-  );
+  });
 
   // Farewell tool
-  server.tool(
-    "goodbye",
-    "A simple goodbye tool",
-    {
+  server.addTool({
+    name: "goodbye",
+    description: "A simple goodbye tool",
+    parameters: z.object({
       name: z.string().describe("Name to bid farewell to")
-    },
-    async (params: { name: string }) => {
+    }),
+    execute: async (params) => {
       const farewell = services.GreetingService.generateFarewell(params.name);
-      return {
-        content: [
-          {
-            type: "text",
-            text: farewell
-          }
-        ]
-      };
+      return farewell;
     }
-  );
+  });
 }

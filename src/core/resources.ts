@@ -1,23 +1,27 @@
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { FastMCP } from "fastmcp";
 import * as services from "./services/index.js";
 
 /**
  * Register all resources with the MCP server
- * @param server The MCP server instance
+ * @param server The FastMCP server instance
  */
-export function registerResources(server: McpServer) {
+export function registerResources(server: FastMCP) {
   // Example resource
-  server.resource(
-    "example_resource", 
-    "example://{id}",
-    async (uri: URL) => {
-      const id = uri.pathname.split('/').pop();
+  server.addResourceTemplate({
+    uriTemplate: "example://{id}",
+    name: "Example Resource",
+    mimeType: "text/plain",
+    arguments: [
+      {
+        name: "id",
+        description: "Resource ID",
+        required: true,
+      },
+    ],
+    async load({ id }) {
       return {
-        contents: [{
-          uri: uri.toString(),
-          text: `This is an example resource with ID: ${id}`
-        }]
+        text: `This is an example resource with ID: ${id}`
       };
     }
-  );
+  });
 } 
