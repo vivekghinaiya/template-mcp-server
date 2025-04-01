@@ -3,7 +3,7 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6)
 
-A CLI tool to quickly get started building your very own MCP (Model Context Protocol) server using FastMCP.
+A CLI tool to quickly get started building your very own MCP (Model Context Protocol) server using FastMCP
 
 ## 📋 Usage
 
