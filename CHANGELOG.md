@@ -1,3 +1,7 @@
+## [2.0.1](https://github.com/mcpdotdirect/template-mcp-server/compare/v2.0.0...v2.0.1) (2025-04-01)
+
+
+
 # [2.0.0](https://github.com/mcpdotdirect/template-mcp-server/compare/v1.0.2...v2.0.0) (2025-04-01)
 
 
