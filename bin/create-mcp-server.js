@@ -163,7 +163,6 @@ function createProjectPackageJson() {
     devDependencies: {
       "@types/bun": "latest",
       "@types/cors": "^2.8.17",
-      "@types/express": "^5.0.0",
       "@types/node": "^20.11.0"
     },
     peerDependencies: {
@@ -174,7 +173,6 @@ function createProjectPackageJson() {
     dependencies: {
       "fastmcp": "^1.21.0",
       "cors": "^2.8.5",
-      "express": "^4.21.2",
       "zod": "^3.24.2"
     }
   };
