@@ -1,12 +1,15 @@
-import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { FastMCP } from "fastmcp";
 import startServer from "./server/server.js";
 
 // Start the server
 async function main() {
   try {
     const server = await startServer();
-    const transport = new StdioServerTransport();
-    await server.connect(transport);
+    
+    server.start({
+      transportType: "stdio",
+    });
+    
     console.error("MCP Server running on stdio");
   } catch (error) {
     console.error("Error starting MCP server:", error);

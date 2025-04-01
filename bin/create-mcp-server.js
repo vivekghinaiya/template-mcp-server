@@ -3,7 +3,6 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { execSync } from 'child_process';
 
 // Get the directory where the source files are stored
 const __filename = fileURLToPath(import.meta.url);
@@ -171,7 +170,7 @@ function createProjectPackageJson() {
       "typescript": "^5.8.2"
     },
     dependencies: {
-      "@modelcontextprotocol/sdk": "^1.7.0",
+      "fastmcp": "^1.21.0",
       "cors": "^2.8.5",
       "express": "^4.21.2",
       "zod": "^3.24.2"
