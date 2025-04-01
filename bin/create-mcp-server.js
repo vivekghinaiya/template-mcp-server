@@ -167,7 +167,9 @@ function createProjectPackageJson() {
       "@types/node": "^20.11.0"
     },
     peerDependencies: {
-      "typescript": "^5.8.2"
+      "typescript": "^5.8.2",
+      "@valibot/to-json-schema": "^1.0.0",
+      "effect": "^3.14.4"
     },
     dependencies: {
       "fastmcp": "^1.21.0",
