@@ -1,23 +1,20 @@
-import { FastMCP } from "fastmcp";
-import startServer from "./server/server.js";
+import express from "express";
 
-// Start the server
-async function main() {
-  try {
-    const server = await startServer();
-    
-    server.start({
-      transportType: "stdio",
-    });
-    
-    console.error("MCP Server running on stdio");
-  } catch (error) {
-    console.error("Error starting MCP server:", error);
-    process.exit(1);
-  }
-}
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-main().catch((error) => {
-  console.error("Fatal error in main():", error);
-  process.exit(1);
-}); 
+app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.send("🚀 MCP Server is running!");
+});
+
+// Example MCP-style endpoint
+app.post("/ask", (req, res) => {
+  const { name } = req.body;
+  res.json({ message: `Hello ${name || "world"} 👋 from your MCP server!` });
+});
+
+app.listen(PORT, () => {
+  console.log(`✅ MCP server live on port ${PORT}`);
+});
